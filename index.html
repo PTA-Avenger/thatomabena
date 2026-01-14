@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thato Mabena | AI & Systems Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* --- PROFESSIONAL RESET & VARIABLES --- */
+        :root {
+            --primary: #0f172a; /* Navy Blue */
+            --accent: #2563eb; /* Corporate Blue */
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-gray: #64748b;
+            --white: #ffffff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+        a { text-decoration: none; transition: 0.3s; }
+        
+        /* --- LAYOUT UTILITIES --- */
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        section { padding: 80px 0; }
+        
+        /* --- NAVIGATION --- */
+        nav { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: fixed; width: 100%; z-index: 1000; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; height: 70px; }
+        .logo { font-size: 1.2rem; font-weight: 700; color: var(--primary); }
+        .nav-links a { margin-left: 25px; color: var(--text-gray); font-size: 0.95rem; font-weight: 500; }
+        .nav-links a:hover { color: var(--accent); }
+
+        /* --- HERO SECTION --- */
+        .hero { height: 90vh; display: flex; align-items: center; background: var(--white); }
+        .hero-content { max-width: 650px; }
+        .hero h1 { font-size: 3rem; color: var(--primary); line-height: 1.1; margin-bottom: 20px; }
+        .hero p { font-size: 1.25rem; color: var(--text-gray); margin-bottom: 30px; }
+        .hero .highlight { color: var(--accent); }
+        
+        /* --- BUTTONS --- */
+        .btn { display: inline-block; padding: 12px 28px; border-radius: 6px; font-weight: 600; font-size: 1rem; cursor: pointer; }
+        .btn-primary { background: var(--accent); color: var(--white); box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2); }
+        .btn-primary:hover { background: #1d4ed8; transform: translateY(-2px); }
+        .btn-outline { border: 2px solid #e2e8f0; color: var(--text-dark); margin-left: 10px; }
+        .btn-outline:hover { border-color: var(--text-dark); background: transparent; }
+        
+        /* Special button for dark background research box */
+        .btn-research { background: rgba(255,255,255,0.15); color: var(--white); border: 1px solid rgba(255,255,255,0.3); margin-right: 10px; }
+        .btn-research:hover { background: var(--white); color: var(--primary); }
+
+        /* --- SKILLS SECTION --- */
+        .bg-white { background: var(--white); }
+        .section-header h2 { font-size: 2rem; margin-bottom: 10px; color: var(--primary); }
+        .section-header p { color: var(--text-gray); margin-bottom: 40px; }
+        
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 12px; }
+        .skill-tag { background: #eff6ff; color: var(--accent); padding: 8px 16px; border-radius: 50px; font-size: 0.9rem; font-weight: 600; }
+
+        /* --- PROJECTS GRID --- */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .project-card { background: var(--white); border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.3s; }
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .card-body { padding: 30px; }
+        .card-meta { font-size: 0.8rem; color: var(--text-gray); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; display: block; }
+        .project-card h3 { font-size: 1.4rem; margin-bottom: 15px; color: var(--primary); }
+        .tech-stack { margin: 15px 0; display: flex; flex-wrap: wrap; gap: 8px; }
+        .tech-pill { font-size: 0.75rem; background: #f1f5f9; padding: 4px 10px; border-radius: 4px; color: var(--text-gray); }
+        .project-link { display: inline-flex; align-items: center; margin-top: 15px; font-weight: 600; color: var(--accent); }
+        .project-link i { margin-left: 5px; }
+
+        /* --- RESEARCH SECTION (FEATURED) --- */
+        .research-box { background: var(--primary); color: var(--white); padding: 40px; border-radius: 12px; position: relative; overflow: hidden; }
+        .research-box h3 { font-size: 1.8rem; margin-bottom: 15px; z-index: 2; position: relative; }
+        .research-box p { color: #cbd5e1; max-width: 700px; margin-bottom: 25px; z-index: 2; position: relative; }
+        .research-badge { background: rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; display: inline-block; margin-bottom: 15px; }
+
+        /* --- FOOTER --- */
+        footer { background: var(--white); padding: 50px 0; border-top: 1px solid #e2e8f0; text-align: center; }
+        .social-links { margin-top: 20px; }
+        .social-links a { margin: 0 10px; color: var(--text-gray); font-size: 1.5rem; }
+        .social-links a:hover { color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">Thato.Dev</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#research">Research</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <p style="color: var(--accent); font-weight: 600;">👋 Hi, I'm Thato Mabena</p>
+                <h1>AI & Systems Engineer building <span class="highlight">Computer Vision</span> solutions.</h1>
+                <p>BSc IT Final Year Student (CS Major) at North-West University. I specialize in Automating Trust (KYC) and Industrial IoT.</p>
+                <div>
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="Thato_Mabena_CV.pdf" target="_blank" class="btn btn-outline"><i class="fas fa-download"></i> Download CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="bg-white">
+        <div class="container">
+            <div class="section-header">
+                <h2>Technical Arsenal</h2>
+                <p>Technologies I use to build production-grade systems.</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-tag">Python (Advanced)</div>
+                <div class="skill-tag">Java</div>
+                <div class="skill-tag">Computer Vision (OpenCV)</div>
+                <div class="skill-tag">PyTorch & TensorFlow</div>
+                <div class="skill-tag">Docker & DevOps</div>
+                <div class="skill-tag">FastAPI</div>
+                <div class="skill-tag">IoT & MQTT</div>
+                <div class="skill-tag">SQL & InfluxDB</div>
+                <div class="skill-tag">AWS & Azure</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <p>Engineering solutions for Fintech and Industrial Automation.</p>
+            </div>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <div class="card-body">
+                        <span class="card-meta">Computer Vision / Fintech</span>
+                        <h3>Automated SA Smart ID Verification API</h3>
+                        <p>An end-to-end KYC solution that uses a U-Net model to segment ID cards from cluttered backgrounds and extracts data via Deep Learning OCR.</p>
+                        <div class="tech-stack">
+                            <span class="tech-pill">Python</span>
+                            <span class="tech-pill">PyTorch</span>
+                            <span class="tech-pill">FastAPI</span>
+                            <span class="tech-pill">Docker</span>
+                        </div>
+                        <a href="https://github.com/PTA-Avenger" class="project-link">View Code <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-body">
+                        <span class="card-meta">Industrial IoT / SCADA</span>
+                        <h3>Real-Time Vehicle Telemetry System</h3>
+                        <p>A SCADA-like monitoring dashboard for vehicle diagnostics. Simulates sensors via MQTT and triggers critical alerts for engine overheating events.</p>
+                        <div class="tech-stack">
+                            <span class="tech-pill">Python</span>
+                            <span class="tech-pill">MQTT</span>
+                            <span class="tech-pill">InfluxDB</span>
+                            <span class="tech-pill">Grafana</span>
+                        </div>
+                        <a href="https://github.com/PTA-Avenger" class="project-link">View Code <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-body">
+                        <span class="card-meta">Data Science / Banking</span>
+                        <h3>Personal Finance Fraud Engine</h3>
+                        <p>A rule-based anomaly detection system that identifies suspicious banking transactions and visualizes spending habits for users.</p>
+                        <div class="tech-stack">
+                            <span class="tech-pill">Pandas</span>
+                            <span class="tech-pill">Streamlit</span>
+                            <span class="tech-pill">Banking Logic</span>
+                        </div>
+                        <a href="https://github.com/PTA-Avenger" class="project-link">View Code <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="research" class="bg-white">
+        <div class="container">
+            <div class="section-header">
+                <h2>Academic Research</h2>
+            </div>
+            <div class="research-box">
+                <span class="research-badge">Published Paper</span>
+                <h3>The TRM-Ace Framework: Democratizing Autonomous Cyber-Operations</h3>
+                <p>Developed a "Tiny Reasoning Model" architecture using <strong>DeepSeek-R1-Distill-Qwen-7B</strong>. Implemented Agentic Context Engineering (ACE) to solve context constraints in LLMs, achieving a >99% training loss reduction on consumer hardware.</p>
+                <div class="tech-stack" style="margin-bottom: 25px;">
+                    <span class="tech-pill" style="background: rgba(255,255,255,0.2); color: white;">Deep Learning</span>
+                    <span class="tech-pill" style="background: rgba(255,255,255,0.2); color: white;">Cybersecurity</span>
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <a href="The TRM-Ace Framework and Agentic Context Engineering.pdf" target="_blank" class="btn btn-research">
+                        <i class="fas fa-file-pdf"></i> Download Paper
+                    </a>
+                    <a href="https://github.com/PTA-Avenger/TRM-Ace/tree/main" target="_blank" class="btn btn-research">
+                        <i class="fab fa-github"></i> View Repository
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <footer>
+            <div class="container">
+                <h2>Let's build something secure.</h2>
+                <p>Open for Internships & Vacation Work (2026/2027)</p>
+                <div class="social-links">
+                    <a href="https://github.com/PTA-Avenger"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/thato-mabena-dev"><i class="fab fa-linkedin"></i></a> 
+                    <a href="mailto:thamymabena@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+                <p style="margin-top: 30px; font-size: 0.8rem;">&copy; 2026 Thato Thamsanqa Mabena.</p>
+            </div>
+        </footer>
+    </section>
+
+</body>
+</html>
